@@ -1,10 +1,10 @@
 "use client";
-import { Hello } from "@/lib/actions/auth";
+import { AuthButton } from "@/components/button/auth-button";
 
 export default function Home() {
   return (
     <div>
-      <Hello />
+      <AuthButton />
     </div>
   );
 }

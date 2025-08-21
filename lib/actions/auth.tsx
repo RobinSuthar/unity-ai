@@ -1,22 +1,14 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import type { AuthOptions } from "next-auth";
+import GithubProvider from "next-auth/providers/github";
 
-export function Hello() {
-  const { data: session } = useSession();
+const authOptions: AuthOptions = {
+  providers: [
+    GithubProvider({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
+    }),
+  ],
+  // ... other options
+};
 
-  if (session) {
-    return (
-      <>
-        Signed in as Client Side : {session.user?.email} <br />
-        Signed in as Server Side :
-        <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    );
-  }
-  return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
-  );
-}
+export default authOptions;

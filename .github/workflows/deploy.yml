@@ -1,0 +1,20 @@
+name: Deploying Project
+on:
+  push:
+    branches: -master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: setup-ing Node.sj
+        uses: actions/setup-node@v4
+
+      - name: install dependecies
+        run: npm install
+
+      - name: build Next.js app
+        run: npm run build
