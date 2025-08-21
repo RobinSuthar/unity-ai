@@ -1,4 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+import { NavbarComponent } from "../blocks/nav-bar";
 
 export function AuthButton() {
   const { data: session } = useSession();
@@ -6,6 +7,7 @@ export function AuthButton() {
   if (session) {
     return (
       <>
+        <NavbarComponent />
         Signed in as Client Side : {session.user?.email} <br />
         Signed in as Server Side :
         <br />

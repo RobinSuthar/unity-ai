@@ -2,6 +2,8 @@ name: Deploying Project
 on:
   push:
     branches: -master
+  pull_request:
+    branches: -master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
