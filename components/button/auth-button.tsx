@@ -7,7 +7,6 @@ export function AuthButton() {
   if (session) {
     return (
       <>
-        <NavbarComponent />
         Signed in as Client Side : {session.user?.email} <br />
         Signed in as Server Side :
         <br />

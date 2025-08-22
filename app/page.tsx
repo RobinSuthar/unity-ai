@@ -1,10 +1,12 @@
 "use client";
-import { AuthButton } from "@/components/button/auth-button";
+import { BackgroundRippleEffectDemo } from "@/components/blocks/background-ripple";
+import { HeroScrollDemo } from "@/components/blocks/hero-scroll";
 
 export default function Home() {
   return (
     <div>
-      <AuthButton />
+      <BackgroundRippleEffectDemo />
+      <HeroScrollDemo />
     </div>
   );
 }
