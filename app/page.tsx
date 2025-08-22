@@ -4,6 +4,10 @@ import image from "@/public/Images/gpt_image.png";
 import { BackgroundRippleEffectDemo } from "@/components/blocks/background-ripple";
 import { HeroScrollDemo } from "@/components/blocks/hero-scroll";
 import Image from "next/image";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { FeaturesSectionDemo } from "@/components/blocks/feature-section";
+import { TabsDemo } from "@/components/blocks/tabs-section";
+import DecryptedText from "@/src/blocks/TextAnimations/DecryptedText/DecryptedText";
 
 export default function Home() {
   return (
@@ -45,6 +49,22 @@ export default function Home() {
         </div>
       </div>
       <HeroScrollDemo />
+      <div className="grid grid-cols-2">
+        <div>
+          <TabsDemo />
+        </div>
+        <div className="mx-auto max-w-lg py-20 text-2xl font-bold tracking-tight md:text-4xl">
+          The best way to grow is to
+          <PointerHighlight>
+            <span>collaborate</span>
+          </PointerHighlight>
+          <div style={{ marginTop: "4rem" }}></div>
+        </div>
+      </div>
+      <div className="mt-24">
+        <FeaturesSectionDemo />
+      </div>
+      div
     </div>
   );
 }
