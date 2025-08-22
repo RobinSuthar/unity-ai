@@ -8,6 +8,7 @@ import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { FeaturesSectionDemo } from "@/components/blocks/feature-section";
 import { TabsDemo } from "@/components/blocks/tabs-section";
 import DecryptedText from "@/src/blocks/TextAnimations/DecryptedText/DecryptedText";
+import { GlowingEffectDemoSecond } from "@/components/blocks/glowing-effect";
 
 export default function Home() {
   return (
@@ -61,8 +62,8 @@ export default function Home() {
           <div style={{ marginTop: "4rem" }}></div>
         </div>
       </div>
-      <div className="mt-24">
-        <FeaturesSectionDemo />
+      <div className="mt-24 p-12">
+        <GlowingEffectDemoSecond />
       </div>
       div
     </div>
