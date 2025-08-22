@@ -122,3 +122,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes cell-ripple {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}

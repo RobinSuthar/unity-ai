@@ -33,7 +33,7 @@ export function NavbarComponent() {
 
   return (
     <div className="relative w-full mt-6">
-      <Navbar>
+      <Navbar className="top-0 fixed z-1030 ">
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
