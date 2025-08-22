@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/resiable-navbar";
 import { useState } from "react";
 import { ModeToggle } from "../theme/toggle-button";
+import { AnimatedThemeToggler } from "@/src/components/magicui/animated-theme-toggler";
 
 export function NavbarComponent() {
   const navItems = [
@@ -40,7 +41,7 @@ export function NavbarComponent() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="secondary">
-              <ModeToggle />
+              <AnimatedThemeToggler />
             </NavbarButton>
             <NavbarButton variant="secondary">Login</NavbarButton>
 
