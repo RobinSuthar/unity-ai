@@ -33,8 +33,9 @@ export default function Home() {
               Powerfull AI
             </h4>
             <h4 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
-              One <FlipWords words={words} />
+              One
             </h4>
+            <FlipWords words={words} />
             <p className="relative z-10 mx-auto mt-4 max-w-xl text-center text-neutral-800 dark:text-neutral-500">
               Hover over the boxes above and click.To be used on backgrounds of
               hero sections OR Call to Action sections. I beg you don&apos;t use
@@ -51,15 +52,15 @@ export default function Home() {
             pauseOnHover={false}
           >
             <Card>
-              <Image src={image} height={1000} width={600} />
+              <Image alt="sad" src={image} height={1000} width={600} />
               <h3>Card 1</h3>
               <p>Your content here</p>
             </Card>
             <Card>
-              <Image src={image} height={800} width={600} />
+              <Image alt="sad" src={image} height={800} width={600} />
             </Card>
             <Card>
-              <Image src={image} height={800} width={600} />
+              <Image alt="sad" src={image} height={800} width={600} />
             </Card>
           </CardSwap>
         </div>
@@ -81,9 +82,7 @@ export default function Home() {
         <GlowingEffectDemoSecond />
       </div>
       <div className="grid grid-cols-2">
-        <div>
-          <HighlighterDemo />
-        </div>
+        <div></div>
         <div>
           {" "}
           <AnimatedBeamDemo />

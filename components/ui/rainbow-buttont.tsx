@@ -1,3 +1,4 @@
+"use client";
 import { RainbowButton } from "@/src/components/magicui/rainbow-button";
 
 export function RainbowButtonDemo() {
