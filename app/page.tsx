@@ -7,7 +7,7 @@ import Image from "next/image";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { FeaturesSectionDemo } from "@/components/blocks/feature-section";
 import { TabsDemo } from "@/components/blocks/tabs-section";
-import DecryptedText from "@/src/blocks/TextAnimations/DecryptedText/DecryptedText";
+import { VideoText } from "@/registry/magicui/video-text";
 import { GlowingEffectDemoSecond } from "@/components/blocks/glowing-effect";
 import { AnimatedBeamDemo } from "@/components/blocks/animated-beam";
 import { HighlighterDemo } from "@/components/ui/high-light";
@@ -22,6 +22,25 @@ export default function Home() {
   return (
     <div>
       <BackgroundRippleEffectDemo />
+      <h2 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
+        Unlock Peak Performance !
+      </h2>
+
+      <p className="relative text-center  z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
+        Each tool is crafted to maximize your AI-driven workflow.
+      </p>
+      <div className="grid grid-cols-2">
+        <div>
+          {" "}
+          <AnimatedBeamDemo />
+        </div>
+
+        <div>
+          <TerminalDemo />
+        </div>
+      </div>
+
+      <HeroScrollDemo />
       <div className="grid grid-cols-2">
         <div>
           <div className="mt-60 w-full">
@@ -60,12 +79,11 @@ export default function Home() {
               <Image alt="sad" src={image} height={800} width={600} />
             </Card>
             <Card>
-              <Image alt="sad" src={image} height={800} width={600} />
+              <Image src={image} height={800} width={600} />
             </Card>
           </CardSwap>
         </div>
       </div>
-      <HeroScrollDemo />
       <div className="grid grid-cols-2">
         <div>
           <TabsDemo />
@@ -78,21 +96,7 @@ export default function Home() {
           <div style={{ marginTop: "4rem" }}></div>
         </div>
       </div>
-      <div className="mt-24 p-12">
-        <GlowingEffectDemoSecond />
-      </div>
-      <div className="grid grid-cols-2">
-        <div></div>
-        <div>
-          {" "}
-          <AnimatedBeamDemo />
-        </div>
-      </div>
       <div>
-        <div>
-          <TerminalDemo />
-        </div>
-
         <Price />
         <div className="flex justify-center mt-24">
           <FAQS />
@@ -101,6 +105,9 @@ export default function Home() {
         <div>
           <Footer />
         </div>
+      </div>
+      <div className="mt-24 p-12">
+        <GlowingEffectDemoSecond />
       </div>
     </div>
   );

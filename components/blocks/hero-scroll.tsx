@@ -11,8 +11,8 @@ export function HeroScrollDemo() {
           <>
             <h1 className="text-4xl font-semibold text-black dark:text-white">
               Unleash the power of <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                Scroll Animations
+              <span className="text-4xl md:text-[6rem] font-bold  leading-none">
+                Peak Performance.
               </span>
             </h1>
           </>
