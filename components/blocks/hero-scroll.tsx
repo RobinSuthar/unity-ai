@@ -9,9 +9,9 @@ export function HeroScrollDemo() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-black dark:text-white">
+            <h1 className="text-2xl font-semibold text-black dark:text-white">
               Unleash the power of <br />
-              <span className="text-4xl md:text-[6rem] font-bold  leading-none">
+              <span className="text-2xl md:text-[3rem] font-bold  leading-none">
                 Peak Performance.
               </span>
             </h1>
@@ -21,7 +21,7 @@ export function HeroScrollDemo() {
         <Image
           src={x}
           alt="hero"
-          height={720}
+          height={420}
           width={1400}
           className="mx-auto rounded-2xl object-cover h-full object-left-top"
           draggable={false}
