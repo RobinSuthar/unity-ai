@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Play, XIcon } from "lucide-react";
-
+import sas from "@/public/Images/gpt_image.png";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type AnimationStyle =
   | "from-bottom"
@@ -85,8 +86,8 @@ export default function HeroVideoDialog({
         className="group relative cursor-pointer border-0 bg-transparent p-0"
         onClick={() => setIsVideoOpen(true)}
       >
-        <img
-          src={thumbnailSrc}
+        <Image
+          src={sas}
           alt={thumbnailAlt}
           width={1920}
           height={1080}
@@ -98,7 +99,7 @@ export default function HeroVideoDialog({
               className={`relative flex size-20 scale-100 items-center justify-center rounded-full bg-gradient-to-b from-primary/30 to-primary shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
             >
               <Play
-                className="size-8 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105"
+                className="size-8 z-50 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105"
                 style={{
                   filter:
                     "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",

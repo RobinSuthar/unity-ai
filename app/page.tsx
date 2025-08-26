@@ -9,8 +9,16 @@ import { FeaturesSectionDemo } from "@/components/blocks/feature-section";
 import { TabsDemo } from "@/components/blocks/tabs-section";
 import DecryptedText from "@/src/blocks/TextAnimations/DecryptedText/DecryptedText";
 import { GlowingEffectDemoSecond } from "@/components/blocks/glowing-effect";
+import { AnimatedBeamDemo } from "@/components/blocks/animated-beam";
+import { HighlighterDemo } from "@/components/ui/high-light";
+import FAQS from "@/components/ui/faqs";
+import Price from "@/components/price";
+import { TerminalDemo } from "@/components/blocks/terminal";
+import Footer from "@/components/blocks/footer";
+import { FlipWords } from "@/components/ui/flip-words";
 
 export default function Home() {
+  const words = ["Price", "Platform"];
   return (
     <div>
       <BackgroundRippleEffectDemo />
@@ -18,8 +26,16 @@ export default function Home() {
         <div>
           <div className="mt-60 w-full">
             <h2 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
-              Interactive Background Boxes Ripple Effect
+              World's
             </h2>
+
+            <h4 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
+              Powerfull AI
+            </h4>
+            <h4 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
+              One
+            </h4>
+            <FlipWords words={words} />
             <p className="relative z-10 mx-auto mt-4 max-w-xl text-center text-neutral-800 dark:text-neutral-500">
               Hover over the boxes above and click.To be used on backgrounds of
               hero sections OR Call to Action sections. I beg you don&apos;t use
@@ -36,15 +52,15 @@ export default function Home() {
             pauseOnHover={false}
           >
             <Card>
-              <Image src={image} height={1000} width={600} />
+              <Image alt="sad" src={image} height={1000} width={600} />
               <h3>Card 1</h3>
               <p>Your content here</p>
             </Card>
             <Card>
-              <Image src={image} height={800} width={600} />
+              <Image alt="sad" src={image} height={800} width={600} />
             </Card>
             <Card>
-              <Image src={image} height={800} width={600} />
+              <Image alt="sad" src={image} height={800} width={600} />
             </Card>
           </CardSwap>
         </div>
@@ -65,7 +81,27 @@ export default function Home() {
       <div className="mt-24 p-12">
         <GlowingEffectDemoSecond />
       </div>
-      div
+      <div className="grid grid-cols-2">
+        <div></div>
+        <div>
+          {" "}
+          <AnimatedBeamDemo />
+        </div>
+      </div>
+      <div>
+        <div>
+          <TerminalDemo />
+        </div>
+
+        <Price />
+        <div className="flex justify-center mt-24">
+          <FAQS />
+        </div>
+        <div></div>
+        <div>
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }

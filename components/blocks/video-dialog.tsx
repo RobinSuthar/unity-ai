@@ -2,7 +2,7 @@ import HeroVideoDialog from "@/src/components/magicui/hero-video-dialog";
 
 export function HeroVideoDialogDemoTopInBottomOut() {
   return (
-    <div className="relative mt-24">
+    <div className="relative mt-32">
       <HeroVideoDialog
         className="block dark:hidden"
         animationStyle="top-in-bottom-out"

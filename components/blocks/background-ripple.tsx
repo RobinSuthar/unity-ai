@@ -3,6 +3,7 @@ import React from "react";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { NavbarComponent } from "./nav-bar";
 import { HeroVideoDialogDemoTopInBottomOut } from "./video-dialog";
+import { SafariDemo } from "./safart";
 
 export function BackgroundRippleEffectDemo() {
   return (
@@ -22,7 +23,10 @@ export function BackgroundRippleEffectDemo() {
         </div>
         <div>
           {" "}
-          <HeroVideoDialogDemoTopInBottomOut />
+          <div className=" relative z-10">
+            {" "}
+            <SafariDemo />
+          </div>
         </div>
       </div>
     </div>
