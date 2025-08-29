@@ -1,25 +1,20 @@
 "use client";
-import CardSwap, { Card } from "@/src/blocks/Components/CardSwap/CardSwap";
-import image from "@/public/Images/gpt_image.png";
 import { BackgroundRippleEffectDemo } from "@/components/blocks/background-ripple";
 import { HeroScrollDemo } from "@/components/blocks/hero-scroll";
-import Image from "next/image";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
-import { FeaturesSectionDemo } from "@/components/blocks/feature-section";
 import { TabsDemo } from "@/components/blocks/tabs-section";
-import { VideoText } from "@/registry/magicui/video-text";
 import { GlowingEffectDemoSecond } from "@/components/blocks/glowing-effect";
 import { AnimatedBeamDemo } from "@/components/blocks/animated-beam";
-import { HighlighterDemo } from "@/components/ui/high-light";
 import FAQS from "@/components/ui/faqs";
-import Price from "@/components/price";
 import { TerminalDemo } from "@/components/blocks/terminal";
 import Footer from "@/components/blocks/footer";
-import { FlipWords } from "@/components/ui/flip-words";
 import { HyperText } from "@/src/components/magicui/hyper-text";
+import Pricing from "@/components/blocks/price";
+import Price from "@/components/blocks/price";
+import { RainbowButtonDemo } from "@/components/button/rain-bow";
+import { HoverBorderGradientDemo } from "@/components/button/gradientt-button";
 
 export default function Home() {
-  const words = ["Price", "Platform"];
   return (
     <div>
       <BackgroundRippleEffectDemo />
@@ -30,7 +25,7 @@ export default function Home() {
       <p className="relative text-center  z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
         Each tool is crafted to maximize your AI-driven workflow.
       </p>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 p-12">
         <div>
           {" "}
           <AnimatedBeamDemo />
@@ -76,15 +71,14 @@ export default function Home() {
             <span>Pricing</span>
           </PointerHighlight>
         </h2>
+
+        <Price />
       </div>
       <div>
         <div className="flex justify-center mt-24">
           <FAQS />
         </div>
-        <div></div>
-        <div>
-          <Footer />
-        </div>
+        <HoverBorderGradientDemo />
       </div>
     </div>
   );

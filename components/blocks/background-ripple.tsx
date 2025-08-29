@@ -9,7 +9,7 @@ import { RainbowButtonDemo } from "../button/rain-bow";
 export function BackgroundRippleEffectDemo() {
   const words = ["Price", "Platform"];
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-start justify-start overflow-hidden">
+    <div className="relative flex min-h-screen p-18 w-full flex-col items-start justify-start overflow-hidden">
       <NavbarComponent />
       <BackgroundRippleEffect />
       <div className="grid grid-cols-2 p-12 text-left">
