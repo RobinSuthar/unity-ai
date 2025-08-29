@@ -65,6 +65,14 @@
     background-position: 200%;
     }
   }
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;
+    }
+  100% {
+    background-position: 200%;
+    }
+  }
 }
 
 :root {
