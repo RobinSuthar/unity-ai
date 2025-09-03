@@ -41,29 +41,29 @@ export function AnimatedBeamDemo() {
     >
       <div className="flex size-full max-h-[600px] max-w-lg flex-col items-stretch justify-between gap-10">
         <div className="flex flex-row items-center justify-between">
-          <Circle ref={div1Ref} className="size-22">
+          <Circle ref={div1Ref} className="size-16">
             <Icons.googleDrive />
           </Circle>
-          <Circle ref={div5Ref} className="size-22">
+          <Circle ref={div5Ref} className="size-16">
             <Icons.googleDocs />
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
-          <Circle ref={div2Ref} className="size-22">
+          <Circle ref={div2Ref} className="size-16">
             <Icons.notion />
           </Circle>
-          <Circle ref={div4Ref} className="size-22">
+          <Circle ref={div4Ref} className="size-33">
             <Icons.openai />
           </Circle>
-          <Circle ref={div6Ref} className="size-22">
+          <Circle ref={div6Ref} className="size-16">
             <Icons.zapier />
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
-          <Circle ref={div3Ref} className="size-22">
+          <Circle ref={div3Ref} className="size-16">
             <Icons.whatsapp />
           </Circle>
-          <Circle ref={div7Ref} className="size-22">
+          <Circle ref={div7Ref} className="size-16">
             <Icons.messenger />
           </Circle>
         </div>

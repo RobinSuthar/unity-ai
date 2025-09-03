@@ -23,7 +23,7 @@ const GlowingEffect = memo(
     proximity = 0,
     spread = 20,
     variant = "default",
-    glow = false,
+    glow = true,
     className,
     movementDuration = 2,
     borderWidth = 1,

@@ -7,12 +7,8 @@ import { GlowingEffectDemoSecond } from "@/components/blocks/glowing-effect";
 import { AnimatedBeamDemo } from "@/components/blocks/animated-beam";
 import FAQS from "@/components/ui/faqs";
 import { TerminalDemo } from "@/components/blocks/terminal";
-import Footer from "@/components/blocks/footer";
 import { HyperText } from "@/src/components/magicui/hyper-text";
-import Pricing from "@/components/blocks/price";
-import Price from "@/components/blocks/price";
-import { RainbowButtonDemo } from "@/components/button/rain-bow";
-import { HoverBorderGradientDemo } from "@/components/button/gradientt-button";
+import { PriceGlow } from "@/components/blocks/price-glow";
 
 export default function Home() {
   return (
@@ -40,11 +36,11 @@ export default function Home() {
         <h2 className="relative m-0 z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           Combine the finest qualities from each AI
         </h2>
-        <div className="mt-12 p-12">
+        <div className="mt-12 p-24">
           <GlowingEffectDemoSecond />
         </div>
       </div>
-      <div>
+      <div className="p-36">
         <h2 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           What Sets Us Apart
         </h2>
@@ -59,7 +55,7 @@ export default function Home() {
               Each tool is crafted to maximize your AI-driven workflow.
             </HyperText>
           </div>
-          <div className="mt-12 p-12">
+          <div className="mt-12 ">
             <HeroScrollDemo />
           </div>
         </div>
@@ -71,14 +67,15 @@ export default function Home() {
             <span>Pricing</span>
           </PointerHighlight>
         </h2>
-
-        <Price />
+        <div className=" p-24 mt-12">
+          {" "}
+          <PriceGlow />
+        </div>
       </div>
       <div>
-        <div className="flex justify-center mt-24">
+        <div className="flex justify-center mt-24 mb-12">
           <FAQS />
         </div>
-        <HoverBorderGradientDemo />
       </div>
     </div>
   );

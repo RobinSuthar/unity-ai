@@ -8,55 +8,38 @@ export function TerminalDemo() {
   return (
     <div className="w-full h-[110vh] overflow-auto flex items-center justify-center">
       <Terminal>
-        <TypingAnimation>&gt; pnpm dlx shadcn@latest init</TypingAnimation>
+        <TypingAnimation>&gt; Launching AI App...</TypingAnimation>
 
         <AnimatedSpan className="text-green-500">
-          <span>✔ Preflight checks.</span>
+          <span>✔ Free Plan enabled: 5 free uses available.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500">
-          <span>✔ Verifying framework. Found Next.js.</span>
+          <span>✔ Good Plan ready: Access to half of all AI models.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500">
-          <span>✔ Validating Tailwind CSS.</span>
+          <span>✔ Premium Plan activated: Unlock all AI models together.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500">
-          <span>✔ Validating import alias.</span>
+          <span>✔ Unlimited usage included for paid plans.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500">
-          <span>✔ Writing components.json.</span>
+          <span>✔ Secure payment system integrated.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500">
-          <span>✔ Checking registry.</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan className="text-green-500">
-          <span>✔ Updating tailwind.config.ts</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan className="text-green-500">
-          <span>✔ Updating app/globals.css</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan className="text-green-500">
-          <span>✔ Installing dependencies.</span>
+          <span>✔ User dashboard optimized for speed.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-blue-500">
-          <span>ℹ Updated 1 file:</span>
-          <span className="pl-2">- lib/utils.ts</span>
+          <span>ℹ Upgrade anytime from Free → Good → Premium.</span>
         </AnimatedSpan>
 
         <TypingAnimation className="text-muted-foreground">
-          Success! Project initialization completed.
-        </TypingAnimation>
-
-        <TypingAnimation className="text-muted-foreground">
-          You may now add components.
+          Success! Your AI journey starts here 🚀
         </TypingAnimation>
       </Terminal>
     </div>

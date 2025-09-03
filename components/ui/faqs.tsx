@@ -68,24 +68,24 @@ const FaqsCard = (props) => {
 export default function FAQS() {
   const faqsList = [
     {
-      q: "What are some random questions to ask?",
-      a: "That's exactly the reason we created this random question generator. There are hundreds of random questions to choose from so you're able to find the perfect random question.",
+      q: "Is there a free plan available?",
+      a: "Yes! You can start with the Free plan, which gives you 5 uses to try the app before upgrading.",
     },
     {
-      q: "Do you include common questions?",
-      a: "This generator doesn't include most common questions. The thought is that you can come up with common questions on your own so most of the questions in this generator.",
+      q: "What’s the difference between Good and Premium?",
+      a: "The Good plan ($5/month) gives you unlimited usage with access to half of our AI models, while Premium ($10/month) unlocks all models with full access.",
     },
     {
-      q: "Can I use this for 21 questions?",
-      a: "Yes! there are two ways that you can use this question generator depending on what you're after. You can indicate that you want 21 questions generated.",
+      q: "Can I upgrade or downgrade anytime?",
+      a: "Absolutely. You can switch between Free, Good, and Premium at any time — no long-term commitment.",
     },
     {
-      q: "Are these questions for girls or for boys?",
-      a: "The questions in this generator are gender neutral and can be used to ask either male of females (or any other gender the person identifies with).",
+      q: "Is my data safe?",
+      a: "Yes. We use encryption and secure servers to protect your data. Your prompts and results are private and never shared.",
     },
     {
-      q: "What do you wish you had more talent doing?",
-      a: "If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires.",
+      q: "Are new AI models added in the future?",
+      a: "Yes! We are constantly improving and adding new AI models and features. Premium users get immediate access to everything new.",
     },
   ];
 
