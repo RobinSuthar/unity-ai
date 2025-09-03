@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 import { ModeToggle } from "../theme/toggle-button";
 import { AnimatedThemeToggler } from "@/src/components/magicui/animated-theme-toggler";
-
+import { useSession, signIn, signOut } from "next-auth/react";
 export function NavbarComponent() {
   const navItems = [
     {
@@ -75,7 +75,9 @@ export function NavbarComponent() {
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={async () =>
+                  signIn(undefined, { callbackUrl: "/some" })
+                }
                 variant="primary"
                 className="w-full"
               >
@@ -91,11 +93,11 @@ export function NavbarComponent() {
               </NavbarButton>
 
               <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => signOut()}
                 variant="primary"
                 className="w-full"
               >
-                Book a call
+                Log Out
               </NavbarButton>
             </div>
           </MobileNavMenu>
