@@ -1,7 +1,6 @@
 import * as React from "react";
 import { GalleryVerticalEnd, Minus, Plus } from "lucide-react";
 
-import { SearchForm } from "@/components/search-form";
 import {
   Collapsible,
   CollapsibleContent,
@@ -20,6 +19,9 @@ import {
   SidebarMenuSubItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { useSession } from "next-auth/react";
+import CurrentUser from "@/lib/actions/current-user";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 // This is sample data.
 const data = {
@@ -102,7 +104,11 @@ const data = {
   ],
 };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export async function AppSidebar({
+  ...props
+}: React.ComponentProps<typeof Sidebar>) {
+  const user = await CurrentUser();
+  console.log(user);
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -111,17 +117,22 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton size="lg" asChild>
               <a href="#">
                 <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <GalleryVerticalEnd className="size-4" />
+                  <Avatar>
+                    <AvatarImage
+                      className="rounded-4xl"
+                      src="https://github.com/shadcn.png"
+                    />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-medium">Documentation</span>
-                  <span className="">v1.0.0</span>
+                  <span className="font-medium">{user?.user?.name} </span>
+                  <span className="text-sm">Free</span>
                 </div>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-        <SearchForm />
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>

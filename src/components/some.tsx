@@ -17,22 +17,16 @@ const InputBox = () => {
   [&::-webkit-scrollbar-thumb]:bg-[#3b3237]"
           rows={2}
           style={{
-            height: "24px",
+            height: "48px",
           }}
         />
         <div className=" w-full flex justify-between items-center ">
           <div className="flex justify-center gap-4">
-            <div className="p-2 font-sans font-semibold max-w-xs hover:cursor-pointer">
+            <div className=" font-sans font-semibold max-w-xs hover:cursor-pointer">
               <DropdownMenuCheckboxes />
             </div>
-            <div className="relative border border-[#4a4454] items-center hover:bg-white/5 duration-100 justify-between p-2 flex gap-2 w-full rounded-xl shadow-md hover:shadow-lg transition-all hover:cursor-pointer group">
-              <>
-                <button className="flex justify-center items-center gap-2 w-24">
-                  <p className="font-sans font-semibold max-w-xs hover:cursor-pointer">
-                    Add a PDF
-                  </p>
-                </button>
-              </>
+            <div className="h-min">
+              <Button variant="outline">Attach</Button>
             </div>
           </div>
           <div className="h-min">
