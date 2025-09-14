@@ -1,11 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { DropdownMenuCheckboxes } from "@/components/ui/drop-menu";
 
 const InputBox = () => {
   return (
-    <div className="min-w-[60px]  max-w-[685px] px-2.5 pt-2.5 backdrop-blur-xl border-[0.1px] border-b-0 bg-[#352c3c]/15 border-[#37323e24] rounded-t-3xl  flex justify-center items-center">
-      <div className="backdrop-blur-lg flex flex-col justify-between border-b-0 border border-[#37323e4b] bg-[#352c3c]/20 pt-4 pb-2 px-4 w-[675px] max-h-full min-h-32 rounded-t-2xl">
+    <div className="min-w-[60px]    max-w-[685px] px-2.5 pt-2.5 backdrop-blur-xl border-[0.1px] border-b-0 bg-[#]/15 border-[#] rounded-t-3xl  flex justify-center items-center">
+      <div className="backdrop-blur-lg flex flex-col justify-between border-b-0 border border-[#37323e4b] bg-[#]/20 pt-4 pb-2 px-4 w-[675px] max-h-full min-h-32 rounded-t-2xl">
         <textarea
           placeholder="Ask anything..."
           className="font-sans w-full focus:outline-none placeholder:font-[600] resize-none overflow-y-auto min-h-[24px] max-h-[250px] leading-6
@@ -20,10 +21,13 @@ const InputBox = () => {
           }}
         />
         <div className=" w-full flex justify-between items-center ">
-          <div>
+          <div className="flex justify-center gap-4">
+            <div className="p-2 font-sans font-semibold max-w-xs hover:cursor-pointer">
+              <DropdownMenuCheckboxes />
+            </div>
             <div className="relative border border-[#4a4454] items-center hover:bg-white/5 duration-100 justify-between p-2 flex gap-2 w-full rounded-xl shadow-md hover:shadow-lg transition-all hover:cursor-pointer group">
               <>
-                <button className="flex justify-center items-center gap-2 w-48">
+                <button className="flex justify-center items-center gap-2 w-24">
                   <p className="font-sans font-semibold max-w-xs hover:cursor-pointer">
                     Add a PDF
                   </p>
@@ -32,7 +36,7 @@ const InputBox = () => {
             </div>
           </div>
           <div className="h-min">
-            <Button />
+            <Button className=""> Send </Button>
           </div>
         </div>
       </div>
