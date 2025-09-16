@@ -11,6 +11,8 @@ import { ScrollAreaDemo } from "@/components/blocks/scrol-area";
 import { ClockFading } from "lucide-react";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { div } from "motion/react-client";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function ScreenArea() {
   const [userMessage, setUserMessage] = useState("");
@@ -54,27 +56,77 @@ export default function ScreenArea() {
       <div>
         <ScrollArea className="h-72  max-w-screen rounded-md ">
           <div className="p-28">
-            <h4 className="">
-              {coverstation.map((x, i) => {
-                if (i === 0 || i % 2 === 0) {
-                  return (
-                    <div key={i}>
-                      <h4 className="mb-4 text-lg leading-none  text-right ">
-                        {x}
-                      </h4>
-                    </div>
-                  );
-                } else {
-                  return (
-                    <div key={i}>
-                      <h4 className="mb-4 text-lg leading-none  text-left ">
-                        {x}
-                      </h4>
-                    </div>
-                  );
-                }
-              })}
-            </h4>
+            {coverstation.map((x, i) => {
+              if (i === 0 || i % 2 === 0) {
+                return (
+                  <div
+                    className="text-right p-2    mb-10 font-light text-3xl"
+                    key={i}
+                  >
+                    {x}
+                  </div>
+                );
+              } else {
+                return (
+                  <div key={i}>
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        h1: ({ node, ...props }) => (
+                          <h1 className="text-3xl font-bold mb-4" {...props} />
+                        ),
+                        h2: ({ node, ...props }) => (
+                          <h2
+                            className="text-2xl font-semibold mb-3"
+                            {...props}
+                          />
+                        ),
+                        h3: ({ node, ...props }) => (
+                          <h3
+                            className="text-xl font-semibold mb-2"
+                            {...props}
+                          />
+                        ),
+                        p: ({ node, ...props }) => (
+                          <p className="mb-2 leading-relaxed" {...props} />
+                        ),
+                        ul: ({ node, ...props }) => (
+                          <ul
+                            className="list-disc list-inside mb-2"
+                            {...props}
+                          />
+                        ),
+                        ol: ({ node, ...props }) => (
+                          <ol
+                            className="list-decimal list-inside mb-2"
+                            {...props}
+                          />
+                        ),
+                        li: ({ node, ...props }) => (
+                          <li className="ml-4 mb-1" {...props} />
+                        ),
+                        code({ node, inline, className, children, ...props }) {
+                          return !inline ? (
+                            <pre className="bg-gray-900 text-white p-3 rounded-md overflow-x-auto mb-3">
+                              <code {...props}>{children}</code>
+                            </pre>
+                          ) : (
+                            <code
+                              className="bg-gray-200 px-1 py-0.5 rounded"
+                              {...props}
+                            >
+                              {children}
+                            </code>
+                          );
+                        },
+                      }}
+                    >
+                      {x}
+                    </ReactMarkdown>
+                  </div>
+                );
+              }
+            })}
           </div>
         </ScrollArea>
       </div>
