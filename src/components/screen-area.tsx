@@ -9,6 +9,8 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { ModeToggle } from "@/components/theme/toggle-button";
 import { ScrollAreaDemo } from "@/components/blocks/scrol-area";
 import { ClockFading } from "lucide-react";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { div } from "motion/react-client";
 
 export default function ScreenArea() {
   const [userMessage, setUserMessage] = useState("");
@@ -16,7 +18,8 @@ export default function ScreenArea() {
   const message = useMessage((state) => state.message);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [UserText, setUserText] = useState<string[]>([]);
-  const AiText = [];
+  const [AiText, setAIText] = useState<string[]>([]);
+  const [coverstation, setCoverstation] = useState<string[]>([]);
 
   const adjustHeight = () => {
     const textarea = textareaRef.current;
@@ -49,7 +52,31 @@ export default function ScreenArea() {
         <ModeToggle />
       </header>
       <div>
-        <ScrollAreaDemo />
+        <ScrollArea className="h-72  max-w-screen rounded-md ">
+          <div className="p-28">
+            <h4 className="">
+              {coverstation.map((x, i) => {
+                if (i === 0 || i % 2 === 0) {
+                  return (
+                    <div key={i}>
+                      <h4 className="mb-4 text-lg leading-none  text-right ">
+                        {x}
+                      </h4>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div key={i}>
+                      <h4 className="mb-4 text-lg leading-none  text-left ">
+                        {x}
+                      </h4>
+                    </div>
+                  );
+                }
+              })}
+            </h4>
+          </div>
+        </ScrollArea>
       </div>
       <div className="flex  ml-72 justify-center fixed align-middle content-center bottom-0">
         <div className="min-w-[60px]    max-w-[685px] px-2.5 pt-2.5 backdrop-blur-xl border-[0.1px] border-b-0 bg-[#]/15 border-[#] rounded-t-3xl  flex justify-center items-center">
@@ -82,11 +109,12 @@ export default function ScreenArea() {
               </div>
               <div className="h-min">
                 <Button
-                  onClick={(e) => {
+                  onClick={async (e) => {
                     setUserText((x) => [...x, userMessage]);
-                    const aiResponse = AIRead(userMessage);
-                    console.log(aiResponse);
-                    console.log(UserText);
+                    const aiResponse = await AIRead(userMessage);
+                    setAIText((x) => [...x, aiResponse]);
+                    setCoverstation((y) => [...y, userMessage, aiResponse]);
+                    console.log(coverstation);
                   }}
                   className=""
                 >
