@@ -2,10 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { DropdownMenuCheckboxes } from "@/components/ui/drop-menu";
+import { AIRead } from "@/lib/actions/ai-read";
 import { useMessage } from "@/lib/use-message";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const InputBox = () => {
+  const [userMessage, setUserMessage] = useState("");
   const setMessage = useMessage((state) => state.setMessage);
   const message = useMessage((state) => state.message);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -26,11 +28,12 @@ const InputBox = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e);
+    setUserMessage(e.target.value);
     setTimeout(adjustHeight, 0);
   };
   return (
     <div className="min-w-[60px]    max-w-[685px] px-2.5 pt-2.5 backdrop-blur-xl border-[0.1px] border-b-0 bg-[#]/15 border-[#] rounded-t-3xl  flex justify-center items-center">
-      <div className="backdrop-blur-lg flex flex-col justify-between border-b-0 border border-[#37323e4b] bg-[#]/20 pt-4 pb-2 px-4 w-[675px] max-h-full min-h-32 rounded-t-2xl">
+      <div className="backdrop-blur-lg flex flex-col justify-between border-b-0 border border-[#37323e4b] bg-[#]/20 pt-4 pb-2 px-4 w-[675px] max-h-full min-h-28 rounded-t-2xl">
         <textarea
           ref={textareaRef}
           placeholder="Ask anything..."
@@ -47,6 +50,7 @@ const InputBox = () => {
             height: "24px",
           }}
         />
+
         <div className=" w-full flex justify-between items-center ">
           <div className="flex justify-center gap-4">
             <div className=" font-sans font-semibold max-w-xs hover:cursor-pointer">
@@ -57,7 +61,18 @@ const InputBox = () => {
             </div>
           </div>
           <div className="h-min">
-            <Button className=""> Send </Button>
+            <Button
+              onClick={(e) => {
+                console.log(e);
+                console.log("asdas");
+                const aiResponse = AIRead(userMessage);
+                console.log(aiResponse);
+              }}
+              className=""
+            >
+              {" "}
+              Send{" "}
+            </Button>
           </div>
         </div>
       </div>
