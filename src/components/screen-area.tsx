@@ -1,25 +1,22 @@
 "use client";
-import { AppSidebar } from "@/components/app-sidebar";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuCheckboxes } from "@/components/ui/drop-menu";
 import { AIRead } from "@/lib/actions/ai-read";
 import { useMessage } from "@/lib/use-message";
 import { useEffect, useRef, useState } from "react";
 import { Separator } from "@/components/ui/separator";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-import InputBox from "./some";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { ModeToggle } from "@/components/theme/toggle-button";
 import { ScrollAreaDemo } from "@/components/blocks/scrol-area";
+import { ClockFading } from "lucide-react";
 
 export default function ScreenArea() {
   const [userMessage, setUserMessage] = useState("");
   const setMessage = useMessage((state) => state.setMessage);
   const message = useMessage((state) => state.message);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [UserText, setUserText] = useState<string[]>([]);
+  const AiText = [];
 
   const adjustHeight = () => {
     const textarea = textareaRef.current;
@@ -86,10 +83,10 @@ export default function ScreenArea() {
               <div className="h-min">
                 <Button
                   onClick={(e) => {
-                    console.log(e);
-                    console.log("asdas");
+                    setUserText((x) => [...x, userMessage]);
                     const aiResponse = AIRead(userMessage);
                     console.log(aiResponse);
+                    console.log(UserText);
                   }}
                   className=""
                 >
