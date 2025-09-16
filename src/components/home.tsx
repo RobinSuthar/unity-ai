@@ -1,12 +1,5 @@
 import { AppSidebar } from "@/components/app-sidebar";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+
 import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
@@ -16,28 +9,13 @@ import {
 import InputBox from "./some";
 import { ModeToggle } from "@/components/theme/toggle-button";
 import { ScrollAreaDemo } from "@/components/blocks/scrol-area";
+import ScreenArea from "./screen-area";
 
 export default function Page() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2  px-4">
-          <SidebarTrigger className="-ml-1" />
-          <Separator
-            orientation="vertical"
-            className="mr-2 data-[orientation=vertical]:h-4"
-          />
-
-          <ModeToggle />
-        </header>
-        <div>
-          <ScrollAreaDemo />
-        </div>
-        <div className="flex  ml-72 justify-center fixed align-middle content-center bottom-0">
-          <InputBox />
-        </div>
-      </SidebarInset>
+      <ScreenArea />
     </SidebarProvider>
   );
 }
