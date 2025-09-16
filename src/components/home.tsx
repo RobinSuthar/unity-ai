@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/sidebar";
 import InputBox from "./some";
 import { ModeToggle } from "@/components/theme/toggle-button";
+import { ScrollAreaDemo } from "@/components/blocks/scrol-area";
 
 export default function Page() {
   return (
@@ -30,6 +31,9 @@ export default function Page() {
 
           <ModeToggle />
         </header>
+        <div>
+          <ScrollAreaDemo />
+        </div>
         <div className="flex  ml-72 justify-center fixed align-middle content-center bottom-0">
           <InputBox />
         </div>
