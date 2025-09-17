@@ -15,7 +15,11 @@ import {
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 
-export function DropdownMenuCheckboxes() {
+export function DropdownMenuCheckboxes({
+  setSelectionType,
+}: {
+  setSelectionType: React.Dispatch<React.SetStateAction<string>>;
+}) {
   const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true);
   const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false);
   const [showPanel, setShowPanel] = React.useState<Checked>(false);
@@ -30,22 +34,30 @@ export function DropdownMenuCheckboxes() {
         <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem
           checked={showStatusBar}
-          onCheckedChange={setShowStatusBar}
+          onSelect={() => {
+            setSelectionType("GPT");
+          }}
+          onCheckedChange={() => setShowStatusBar}
         >
-          Status Bar
+          GPT 5
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
+          onSelect={() => {
+            setSelectionType("Gemini");
+          }}
           checked={showActivityBar}
-          onCheckedChange={setShowActivityBar}
-          disabled
+          onCheckedChange={() => setShowActivityBar}
         >
-          Activity Bar
+          Gemini
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
+          onSelect={() => {
+            setSelectionType("Grok");
+          }}
           checked={showPanel}
-          onCheckedChange={setShowPanel}
+          onCheckedChange={() => setShowPanel}
         >
-          Panel
+          Grok
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>

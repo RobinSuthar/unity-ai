@@ -7,12 +7,10 @@ import { useEffect, useRef, useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { ModeToggle } from "@/components/theme/toggle-button";
-import { ScrollAreaDemo } from "@/components/blocks/scrol-area";
-import { ClockFading } from "lucide-react";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { div } from "motion/react-client";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { GeminiAI } from "@/lib/actions/gemini-read";
 
 export default function ScreenArea() {
   const [userMessage, setUserMessage] = useState("");
@@ -22,7 +20,7 @@ export default function ScreenArea() {
   const [UserText, setUserText] = useState<string[]>([]);
   const [AiText, setAIText] = useState<string[]>([]);
   const [coverstation, setCoverstation] = useState<string[]>([]);
-
+  const [modelSelection, setModelSelection] = useState("");
   const adjustHeight = () => {
     const textarea = textareaRef.current;
     if (textarea) {
@@ -36,6 +34,28 @@ export default function ScreenArea() {
   useEffect(() => {
     adjustHeight();
   }, [message]);
+
+  useEffect(() => {
+    console.log(modelSelection);
+    async function sas() {
+      if (modelSelection == "Grok") {
+        const aiResponse = await AIRead(userMessage);
+      }
+      if (modelSelection == "GPT 5") {
+        const aiResponse = await AIRead(userMessage);
+      }
+      if (modelSelection == "Gemini") {
+        const aiResponse = await GeminiAI(userMessage);
+      }
+      setUserText((x) => [...x, userMessage]);
+      const aiResponse = await AIRead(userMessage);
+      setAIText((x) => [...x, aiResponse]);
+      setCoverstation((y) => [...y, userMessage, aiResponse]);
+      console.log(coverstation);
+    }
+
+    sas();
+  }, [modelSelection]);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e);
@@ -153,7 +173,9 @@ export default function ScreenArea() {
             <div className=" w-full flex justify-between items-center ">
               <div className="flex justify-center gap-4">
                 <div className=" font-sans font-semibold max-w-xs hover:cursor-pointer">
-                  <DropdownMenuCheckboxes />
+                  <DropdownMenuCheckboxes
+                    setSelectionType={setModelSelection}
+                  />
                 </div>
                 <div className="h-min">
                   <Button variant="outline">Attach</Button>
@@ -163,9 +185,29 @@ export default function ScreenArea() {
                 <Button
                   onClick={async (e) => {
                     setUserText((x) => [...x, userMessage]);
-                    const aiResponse = await AIRead(userMessage);
-                    setAIText((x) => [...x, aiResponse]);
-                    setCoverstation((y) => [...y, userMessage, aiResponse]);
+                    if (modelSelection == "GPT") {
+                      console.log("SssssssssssAdasd");
+                      const aiResponse = await AIRead(userMessage);
+                      setAIText((x) => [...x, aiResponse]);
+                      setCoverstation((y) => [...y, userMessage, aiResponse]);
+                    }
+                    if (modelSelection == "Grok") {
+                      console.log("SAdszzzzzzzzzzzzasd");
+                      const aiResponse = await AIRead(userMessage);
+                      setAIText((x) => [...x, aiResponse]);
+                      setCoverstation((y) => [...y, userMessage, aiResponse]);
+                    }
+                    if (modelSelection == "Gemini") {
+                      console.log("SAdasd");
+                      const aiResponse = await GeminiAI(userMessage);
+                      setAIText((x) => [...x, aiResponse ? aiResponse : ""]);
+                      setCoverstation((y) => [
+                        ...y,
+                        userMessage,
+                        aiResponse ? aiResponse : "",
+                      ]);
+                    }
+                    console.log('"Asdasd"');
                     console.log(coverstation);
                   }}
                   className=""
