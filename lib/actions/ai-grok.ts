@@ -14,7 +14,7 @@ const completion = await client.chat.completions.create({
   messages: [
     {
       role: "system",
-      content: "You are Grok, a highly intelligent, helpful AI assistant.",
+      content: "Great initally and then answer question based on User question",
     },
     {
       role: "user",
