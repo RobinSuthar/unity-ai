@@ -11,7 +11,7 @@ const InputBox = () => {
   const setMessage = useMessage((state) => state.setMessage);
   const message = useMessage((state) => state.message);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-
+  const [modelSelection , setModelSelection] = useState("");
   const adjustHeight = () => {
     const textarea = textareaRef.current;
     if (textarea) {
@@ -54,7 +54,7 @@ const InputBox = () => {
         <div className=" w-full flex justify-between items-center ">
           <div className="flex justify-center gap-4">
             <div className=" font-sans font-semibold max-w-xs hover:cursor-pointer">
-              <DropdownMenuCheckboxes />
+              <DropdownMenuCheckboxes setSelectionType={setModelSelection} />
             </div>
             <div className="h-min">
               <Button variant="outline">Attach</Button>

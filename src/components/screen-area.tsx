@@ -20,7 +20,7 @@ export default function ScreenArea() {
   const [UserText, setUserText] = useState<string[]>([]);
   const [AiText, setAIText] = useState<string[]>([]);
   const [coverstation, setCoverstation] = useState<string[]>([]);
-  const [modelSelection, setModelSelection] = useState("");
+  const [modelSelection, setModelSelection] = useState("GPT");
   const adjustHeight = () => {
     const textarea = textareaRef.current;
     if (textarea) {
@@ -72,6 +72,7 @@ export default function ScreenArea() {
         />
 
         <ModeToggle />
+        <div className="ml-2 text-2xl">{modelSelection}</div>
       </header>
       <div>
         <ScrollArea className="h-72  max-w-screen rounded-md ">
@@ -87,64 +88,7 @@ export default function ScreenArea() {
                   </div>
                 );
               } else {
-                return (
-                  <div key={i}>
-                    <ReactMarkdown
-                      remarkPlugins={[remarkGfm]}
-                      components={{
-                        h1: ({ node, ...props }) => (
-                          <h1 className="text-3xl font-bold mb-4" {...props} />
-                        ),
-                        h2: ({ node, ...props }) => (
-                          <h2
-                            className="text-2xl font-semibold mb-3"
-                            {...props}
-                          />
-                        ),
-                        h3: ({ node, ...props }) => (
-                          <h3
-                            className="text-xl font-semibold mb-2"
-                            {...props}
-                          />
-                        ),
-                        p: ({ node, ...props }) => (
-                          <p className="mb-2 leading-relaxed" {...props} />
-                        ),
-                        ul: ({ node, ...props }) => (
-                          <ul
-                            className="list-disc list-inside mb-2"
-                            {...props}
-                          />
-                        ),
-                        ol: ({ node, ...props }) => (
-                          <ol
-                            className="list-decimal list-inside mb-2"
-                            {...props}
-                          />
-                        ),
-                        li: ({ node, ...props }) => (
-                          <li className="ml-4 mb-1" {...props} />
-                        ),
-                        code({ node, inline, className, children, ...props }) {
-                          return !inline ? (
-                            <pre className="bg-gray-900 text-white p-3 rounded-md overflow-x-auto mb-3">
-                              <code {...props}>{children}</code>
-                            </pre>
-                          ) : (
-                            <code
-                              className="bg-gray-200 px-1 py-0.5 rounded"
-                              {...props}
-                            >
-                              {children}
-                            </code>
-                          );
-                        },
-                      }}
-                    >
-                      {x}
-                    </ReactMarkdown>
-                  </div>
-                );
+                return <div key={i}>{x}</div>;
               }
             })}
           </div>

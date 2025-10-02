@@ -11,7 +11,7 @@ export async function AIRead(userMessage: string) {
       {
         role: "system",
         content:
-          "You are a helpful assistant. Always reply in GitHub-flavored Markdown. Use proper headings (#, ##, ###), bullet points, numbered lists, tables, and fenced code blocks (```language) when needed.",
+          " Great initally and then answer question based on User question",
       },
       {
         role: "user",

@@ -30,7 +30,7 @@ export function DropdownMenuCheckboxes({
         <Button variant="outline">Open</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+        <DropdownMenuLabel>Models</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem
           checked={showStatusBar}
@@ -58,6 +58,15 @@ export function DropdownMenuCheckboxes({
           onCheckedChange={() => setShowPanel}
         >
           Grok
+        </DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem
+          onSelect={() => {
+            setSelectionType("Grok");
+          }}
+          checked={showPanel}
+          onCheckedChange={() => setShowPanel}
+        >
+          
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>
