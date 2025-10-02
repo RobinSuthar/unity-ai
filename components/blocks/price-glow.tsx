@@ -8,29 +8,38 @@ export function PriceGlow() {
     <ul className="grid p-12 grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
       <GridItem
         area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/3/5]"
-        icon={<Box className="h-4 w-4 text-black dark:text-neutral-400" />}
+        icon={
+          <Box className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-black md:text-2xl/[1.875rem] dark:text-white" />
+        }
         title="Free"
-        description={`✅ 5 free uses
-❌ Access to half AI models
-❌ Access to all AI models`}
+        description={`
+        5 free uses
+        Access to half AI models
+        Access to all AI models`}
       />
 
       <GridItem
         area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/9]"
-        icon={<Lock className="h-4 w-4 text-black dark:text-neutral-400" />}
+        icon={
+          <Lock className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-black md:text-2xl/[1.875rem] dark:text-white" />
+        }
         title="Pro"
-        description={`✅ 5 free uses
-✅  Access to half AI models
-❌ Access to all AI models`}
+        description={`
+        5 free uses
+        Access to half AI models
+        Access to all AI models`}
       />
 
       <GridItem
         area="md:[grid-area:2/7/3/13] xl:[grid-area:1/9/3/14]"
-        icon={<Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />}
+        icon={
+          <Sparkles className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-black md:text-2xl/[1.875rem] dark:text-white" />
+        }
         title="Preimium"
-        description={`✅ Unlimited usage
-✅ Access to half AI models
-✅ Access to all AI models`}
+        description={`
+          Unlimited usage
+          Access to half AI models
+          Access to all AI models`}
       />
     </ul>
   );
@@ -65,7 +74,7 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
                   {icon}
                 </div>
               </h3>
-              <h2 className="font-sans whitespace-pre-line text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
+              <h2 className="font-sans flex flex-row text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
                 {description}
               </h2>
             </div>
