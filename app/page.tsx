@@ -80,11 +80,11 @@ export default function Home() {
       <div>
         <h2 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           Discover sharper, more reliable AI responses.
-          <p className="relative text-center  z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
-            Our exclusive Promptbook gives you a competitive advantage with
-            personalized insights and guidance for any field or topic.
-          </p>
         </h2>
+        <p className="relative text-center mt-8  z-10 mx-auto  max-w-xl  text-neutral-800 dark:text-neutral-500">
+          Our exclusive Promptbook gives you a competitive advantage with
+          personalized insights and guidance for any field or topic.
+        </p>
       </div>
     </div>
   );

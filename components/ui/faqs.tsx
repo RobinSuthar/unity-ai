@@ -95,7 +95,7 @@ export default function FAQS() {
         <h1 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           Frequently Asked Questions
         </h1>
-        <p className="relative text-center mt-8  z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
+        <p className="relative text-center mt-8  z-10 mx-auto  max-w-xl  text-neutral-800 dark:text-neutral-500">
           Answered all frequently asked questions, Still confused? feel free to
           contact us.
         </p>
