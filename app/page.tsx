@@ -9,6 +9,7 @@ import FAQS from "@/components/ui/faqs";
 import { TerminalDemo } from "@/components/blocks/terminal";
 import { HyperText } from "@/src/components/magicui/hyper-text";
 import { PriceGlow } from "@/components/blocks/price-glow";
+import WrapBg from "@/components/ui/wrap-bg";
 
 export default function Home() {
   return (
@@ -85,6 +86,11 @@ export default function Home() {
           Our exclusive Promptbook gives you a competitive advantage with
           personalized insights and guidance for any field or topic.
         </p>
+      </div>
+      <div>
+        <div>
+          <WrapBg />
+        </div>
       </div>
     </div>
   );
