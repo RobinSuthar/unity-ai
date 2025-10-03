@@ -52,7 +52,7 @@ export function AnimatedBeamDemo() {
           <Circle ref={div2Ref} className="size-16">
             <Icons.notion />
           </Circle>
-          <Circle ref={div4Ref} className="size-33">
+          <Circle ref={div4Ref} className="size-28">
             <Icons.openai />
           </Circle>
           <Circle ref={div6Ref} className="size-16">

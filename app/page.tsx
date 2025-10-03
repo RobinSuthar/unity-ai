@@ -40,7 +40,7 @@ export default function Home() {
           <GlowingEffectDemoSecond />
         </div>
       </div>
-      <div className="p-36">
+      <div className="px-36">
         <h2 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           What Sets Us Apart
         </h2>
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <div className="flex justify-center mt-24 mb-12">
+        <div className="flex justify-center  mb-12">
           <FAQS />
         </div>
       </div>
