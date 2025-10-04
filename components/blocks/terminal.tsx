@@ -6,7 +6,7 @@ import {
 
 export function TerminalDemo() {
   return (
-    <div className="w-full h-[110vh] overflow-auto flex items-center justify-center">
+    <div className="w-full h-[100vh] overflow-auto flex items-center justify-center">
       <Terminal>
         <TypingAnimation className="text-lg">
           &gt; Launching AI App...
