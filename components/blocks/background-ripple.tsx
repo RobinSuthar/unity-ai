@@ -35,7 +35,7 @@ export function BackgroundRippleEffectDemo() {
         </div>
         <div>
           {" "}
-          <div className=" relative z-10 mb-52">
+          <div className=" relative z-10 mb-18">
             {" "}
             <SafariDemo />
           </div>
