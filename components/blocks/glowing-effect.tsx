@@ -8,35 +8,35 @@ export function GlowingEffectDemoSecond() {
     <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
       <GridItem
         area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-        icon={<Box className="h-4 w-4 text-black dark:text-neutral-400" />}
+        icon={<Box className="h-6 w-6 text-black dark:text-neutral-400" />}
         title="Start Free, Upgrade Anytime"
         description="Try the app with 5 free uses, then unlock more power with Good and Premium plans."
       />
 
       <GridItem
         area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-        icon={<Settings className="h-4 w-4 text-black dark:text-neutral-400" />}
+        icon={<Settings className="h-6 w-6 text-black dark:text-neutral-400" />}
         title="Multiple AI Models"
         description="From quick helpers to advanced models — choose the right tool for every task."
       />
 
       <GridItem
         area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-        icon={<Lock className="h-4 w-4 text-black dark:text-neutral-400" />}
+        icon={<Lock className="h-6 w-6 text-black dark:text-neutral-400" />}
         title="Secure & Private"
         description="Your data is protected with encryption and never shared with third parties."
       />
 
       <GridItem
         area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-        icon={<Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />}
+        icon={<Sparkles className="h-6 w-6 text-black dark:text-neutral-400" />}
         title="Unlimited Usage"
         description="Paid plans remove limits so you can generate, create, and explore without restriction."
       />
 
       <GridItem
         area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-        icon={<Search className="h-4 w-4 text-black dark:text-neutral-400" />}
+        icon={<Search className="h-6 w-6 text-black dark:text-neutral-400" />}
         title="Always Improving"
         description="We’re constantly adding new models and features — your plan gets better over time."
       />

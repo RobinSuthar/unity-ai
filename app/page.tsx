@@ -37,6 +37,11 @@ export default function Home() {
         <h2 className="relative m-0 z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           Combine the finest qualities from each AI
         </h2>
+        <p className="relative text-center  z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
+          Supercharge your creativity with UnityAI’s Promptbook — a powerful
+          companion built to deliver smart, customized prompts and insights for
+          any topic or industry.
+        </p>
         <div className="mt-12 p-24">
           <GlowingEffectDemoSecond />
         </div>
@@ -45,6 +50,10 @@ export default function Home() {
         <h2 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           What Sets Us Apart
         </h2>
+        <p className="relative text-center  z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
+          At UnityAI, we don’t just connect you to AI — we unify the world’s
+          smartest models into one seamless experience.
+        </p>
         <div className="grid grid-cols-2">
           <div>
             {" "}

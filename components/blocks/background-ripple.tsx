@@ -13,7 +13,7 @@ export function BackgroundRippleEffectDemo() {
       <NavbarComponent />
       <BackgroundRippleEffect />
       <div className="grid grid-cols-2  text-left">
-        <div className="mt-28 w-full">
+        <div className="mt-26 w-full">
           <h2 className="relative z-10 mx-auto max-w-4xl  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
             Worlds
           </h2>
@@ -27,9 +27,10 @@ export function BackgroundRippleEffectDemo() {
           </h4>
 
           <p className="relative text-left ml-0 z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
-            Hover over the boxes above and click.To be used on backgrounds of
-            hero sections OR Call to Action sections. I beg you don&apos;t use
-            it everywhere.
+            Stop switching between tools and paying for multiple subscriptions —
+            UnityAI brings all the leading AI models together in one powerful
+            platform for just $12/month. Experience seamless access, smarter
+            workflows, all in one place.
           </p>
           <RainbowButtonDemo />
         </div>
