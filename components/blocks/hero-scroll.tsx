@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { ContainerScroll } from "../ui/container-scroll-animation";
-import x from "@/public/Images/gpt_image.png";
+import x from "@/public/gptgenerated.png";
 export function HeroScrollDemo() {
   return (
     <div className="flex flex-col overflow-hidden">

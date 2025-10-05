@@ -13,31 +13,31 @@ export function TerminalDemo() {
         </TypingAnimation>
 
         <AnimatedSpan className="text-green-500 m-2 text-md ">
-          <span>✔ Free Plan enabled: 5 free uses available.</span>
+          <span>✔ Access GPT — the smartest conversational model.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500  m-2   text-md ">
-          <span>✔ Good Plan ready: Access to half of all AI models.</span>
+          <span>✔ Access Claude — deep understanding and reasoning.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500 m-2   text-md ">
-          <span>✔ Premium Plan activated: Unlock all AI models .</span>
+          <span>✔ Access Grok — fast, and real-time intelligence.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500 m-2   text-md ">
-          <span>✔ Unlimited usage included for paid plans.</span>
+          <span>✔ Access Meta AI — adaptive and scalable for any task.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500  m-2   text-md ">
-          <span>✔ Secure payment system integrat m-2 ed.</span>
+          <span>✔ Access DeepSeek — precise, data-driven performance.</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-green-500 m-2  text-md">
-          <span>✔ User dashboard optimized for speed.</span>
+          <span>✔ All top AI models combined into one platform .</span>
         </AnimatedSpan>
 
         <AnimatedSpan className="text-blue-500  m-2  text-md">
-          <span>ℹ Upgrade anytime from Free → Good → Premium.</span>
+          <span>💡 Use every AI model for a fraction of usual cost.</span>
         </AnimatedSpan>
 
         <TypingAnimation className="text-muted-foreground  m-2  text-md">
