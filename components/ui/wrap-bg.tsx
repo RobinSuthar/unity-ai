@@ -11,7 +11,6 @@ export default function WrapBg() {
           </div>
         </div>
       </WarpBackground>
-      ;
     </div>
   );
 }

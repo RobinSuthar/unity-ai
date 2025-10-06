@@ -90,7 +90,7 @@ export default function FAQS() {
   ];
 
   return (
-    <section className="leading-relaxed max-w-screen-xl mt-12 mx-auto px-4 md:px-8">
+    <section className="leading-relaxed max-w-screen-xl mt-6 mx-auto px-4 md:px-8">
       <div className="space-y-3 text-center">
         <h1 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           Frequently Asked Questions

@@ -10,6 +10,7 @@ import { TerminalDemo } from "@/components/blocks/terminal";
 import { HyperText } from "@/src/components/magicui/hyper-text";
 import { PriceGlow } from "@/components/blocks/price-glow";
 import WrapBg from "@/components/ui/wrap-bg";
+import { ScrollBasedVelocityImagesDemo } from "@/components/blocks/scroll";
 
 export default function Home() {
   return (
@@ -42,7 +43,7 @@ export default function Home() {
           companion built to deliver smart, customized prompts and insights for
           any topic or industry.
         </p>
-        <div className="mt-12 p-24">
+        <div className=" p-24">
           <GlowingEffectDemoSecond />
         </div>
       </div>
@@ -54,40 +55,34 @@ export default function Home() {
           At UnityAI, we don’t just connect you to AI — we unify the world’s
           smartest models into one seamless experience.
         </p>
-        <div className="grid grid-cols-2">
-          <div>
-            {" "}
-            <div>
-              <TabsDemo />
-            </div>
-            <HyperText className="text-center mt-6">What You Get</HyperText>
-            <HyperText className="relative text-md text-center  z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
-              Each tool is crafted to maximize your AI-driven workflow.
-            </HyperText>
-          </div>
+        <div className="grid grid-cols-1">
           <div className="mt-12 ">
-            <HeroScrollDemo />
+            <ScrollBasedVelocityImagesDemo />
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-1 mt-24">
         <h2 className="relative mt-0 z mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           <PointerHighlight>
             <span>Pricing</span>
           </PointerHighlight>
         </h2>
-        <div className=" p-24 mt-12">
+        <p className="relative text-center  z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
+          Why pay more for scattered tools? UnityAI unifies every leading AI
+          model into one smart, low-cost platform.
+        </p>
+        <div className=" p-12 ">
           {" "}
           <PriceGlow />
         </div>
       </div>
       <div>
-        <div className="flex justify-center  mb-12">
+        <div className="flex justify-center   mb-6">
           <FAQS />
         </div>
       </div>
-      <div>
+      <div className="mt-12">
         <h2 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           Discover sharper, more reliable AI responses.
         </h2>

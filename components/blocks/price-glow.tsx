@@ -13,9 +13,9 @@ export function PriceGlow() {
         }
         title="Free"
         description={`
-        5 free uses
-        Access to half AI models
-        Access to all AI models`}
+          • Get 50 free tokens instantly  
+          • Access basic AI models  
+          • Try UnityAI at no cost`}
       />
 
       <GridItem
@@ -25,9 +25,9 @@ export function PriceGlow() {
         }
         title="Pro"
         description={`
-        5 free uses
-        Access to half AI models
-        Access to all AI models`}
+          • Get 100 extra tokens  
+          • Promote & star our GitHub repo  
+          • Unlock more AI models`}
       />
 
       <GridItem
@@ -37,9 +37,9 @@ export function PriceGlow() {
         }
         title="Preimium"
         description={`
-          Unlimited usage
-          Access to half AI models
-          Access to all AI models`}
+          • Pay just $12/month  
+          • Get 10,000 tokens  
+          • Full access to all AI models`}
       />
     </ul>
   );
@@ -74,7 +74,7 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
               <h3 className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-black md:text-2xl/[1.875rem] dark:text-white">
                 {title}
               </h3>
-              <h2 className="font-sans text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
+              <h2 className="font-sans whitespace-pre-line  text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
                 {description}
               </h2>
             </div>
