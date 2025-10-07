@@ -8,6 +8,9 @@ const authOptions: AuthOptions = {
       clientSecret: process.env.GITHUB_SECRET!,
     }),
   ],
+  pages: {
+    signIn: "/auth/signin",
+  },
   // ... other options
 };
 

@@ -43,7 +43,14 @@ export function NavbarComponent() {
             <NavbarButton variant="secondary">
               <AnimatedThemeToggler />
             </NavbarButton>
-            <NavbarButton variant="secondary">Login</NavbarButton>
+            <NavbarButton
+              onClick={async () =>
+                signIn(undefined, { callbackUrl: "/auth/signin" })
+              }
+              variant="secondary"
+            >
+              Login
+            </NavbarButton>
 
             <NavbarButton variant="primary">Book a call</NavbarButton>
           </div>
