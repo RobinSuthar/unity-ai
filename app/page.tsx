@@ -82,7 +82,7 @@ export default function Home() {
           <FAQS />
         </div>
       </div>
-      <div className="mt-12">
+      <div className="mt-24">
         <h2 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
           Discover sharper, more reliable AI responses.
         </h2>
