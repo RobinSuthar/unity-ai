@@ -74,7 +74,7 @@ export default function ScreenArea() {
         <ModeToggle />
         <div className="ml-2 text-2xl">{modelSelection}</div>
       </header>
-      <div>
+      <div className="mb-24">
         <ScrollArea className="h-72  max-w-screen rounded-md ">
           <div className="p-28">
             {coverstation.map((x, i) => {
