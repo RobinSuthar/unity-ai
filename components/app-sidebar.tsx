@@ -1,179 +1,168 @@
-import * as React from "react";
-import { GalleryVerticalEnd, Minus, Plus } from "lucide-react";
+"use client";
 
+import * as React from "react";
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+  IconCamera,
+  IconChartBar,
+  IconDashboard,
+  IconFileAi,
+  IconFileDescription,
+  IconFolder,
+  IconHelp,
+  IconInnerShadowTop,
+  IconListDetails,
+  IconSearch,
+  IconSettings,
+  IconUsers,
+} from "@tabler/icons-react";
+
+import { NavMain } from "@/components/nav-main";
+import { NavSecondary } from "@/components/nav-secondary";
+import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
   SidebarContent,
-  SidebarGroup,
+  SidebarFooter,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  SidebarRail,
 } from "@/components/ui/sidebar";
 import { useSession } from "next-auth/react";
-import CurrentUser from "@/lib/actions/current-user";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
-// This is sample data.
 const data = {
+  user: {
+    name: "shadcn",
+    email: "m@example.com",
+    avatar: "/avatars/shadcn.jpg",
+  },
   navMain: [
     {
-      title: "Getting Started",
+      title: "Dashboard",
+      url: "#",
+      icon: IconDashboard,
+    },
+    {
+      title: "Lifecycle",
+      url: "#",
+      icon: IconListDetails,
+    },
+    {
+      title: "Analytics",
+      url: "#",
+      icon: IconChartBar,
+    },
+    {
+      title: "Projects",
+      url: "#",
+      icon: IconFolder,
+    },
+    {
+      title: "Team",
+      url: "#",
+      icon: IconUsers,
+    },
+  ],
+  navClouds: [
+    {
+      title: "Capture",
+      icon: IconCamera,
+      isActive: true,
       url: "#",
       items: [
         {
-          title: "Installation",
+          title: "Active Proposals",
           url: "#",
         },
         {
-          title: "Project Structure",
+          title: "Archived",
           url: "#",
         },
       ],
     },
     {
-      title: "Building Your Application",
+      title: "Proposal",
+      icon: IconFileDescription,
       url: "#",
       items: [
         {
-          title: "Routing",
+          title: "Active Proposals",
           url: "#",
         },
         {
-          title: "Data Fetching",
-          url: "#",
-          isActive: true,
-        },
-      ],
-    },
-    {
-      title: "API Reference",
-      url: "#",
-      items: [
-        {
-          title: "Components",
+          title: "Archived",
           url: "#",
         },
       ],
     },
     {
-      title: "Architecture",
+      title: "Prompts",
+      icon: IconFileAi,
       url: "#",
       items: [
         {
-          title: "Accessibility",
+          title: "Active Proposals",
           url: "#",
         },
         {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Community",
-      url: "#",
-      items: [
-        {
-          title: "Contribution Guide",
+          title: "Archived",
           url: "#",
         },
       ],
     },
   ],
+  navSecondary: [
+    {
+      title: "Settings",
+      url: "#",
+      icon: IconSettings,
+    },
+    {
+      title: "Get Help",
+      url: "#",
+      icon: IconHelp,
+    },
+    {
+      title: "Search",
+      url: "#",
+      icon: IconSearch,
+    },
+  ],
 };
 
-export async function AppSidebar({
-  ...props
-}: React.ComponentProps<typeof Sidebar>) {
-  const user = await CurrentUser();
-  console.log(user);
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const loggedIN = useSession();
+
+  const useData = {
+    name: loggedIN.data?.user?.name,
+    email: loggedIN.data?.user?.email,
+    avatar: loggedIN.data?.user?.image,
+  };
+
   return (
-    <Sidebar {...props}>
+    <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
+            <SidebarMenuButton
+              asChild
+              className="data-[slot=sidebar-menu-button]:!p-1.5"
+            >
               <a href="#">
-                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <Avatar>
-                    <AvatarImage
-                      className="rounded-4xl"
-                      src="https://github.com/shadcn.png"
-                    />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                </div>
-                <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-medium">{user?.user?.name} </span>
-                  <span className="text-sm">Free</span>
-                </div>
+                <IconInnerShadowTop className="!size-5" />
+                <span className="text-base font-semibold">Unity AI.</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarMenu>
-            {data.navMain.map((item, index) => (
-              <Collapsible
-                key={item.title}
-                defaultOpen={index === 1}
-                className="group/collapsible"
-              >
-                <SidebarMenuItem>
-                  <CollapsibleTrigger asChild>
-                    <SidebarMenuButton>
-                      {item.title}{" "}
-                      <Plus className="ml-auto group-data-[state=open]/collapsible:hidden" />
-                      <Minus className="ml-auto group-data-[state=closed]/collapsible:hidden" />
-                    </SidebarMenuButton>
-                  </CollapsibleTrigger>
-                  {item.items?.length ? (
-                    <CollapsibleContent>
-                      <SidebarMenuSub>
-                        {item.items.map((item) => (
-                          <SidebarMenuSubItem key={item.title}>
-                            <SidebarMenuSubButton
-                              asChild
-                              isActive={item.isActive}
-                            >
-                              <a href={item.url}>{item.title}</a>
-                            </SidebarMenuSubButton>
-                          </SidebarMenuSubItem>
-                        ))}
-                      </SidebarMenuSub>
-                    </CollapsibleContent>
-                  ) : null}
-                </SidebarMenuItem>
-              </Collapsible>
-            ))}
-          </SidebarMenu>
-        </SidebarGroup>
+        <NavMain items={data.navMain} />
+        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
-      <SidebarRail />
+      <SidebarFooter>
+        <NavUser user={useData ? useData : data.user} />
+      </SidebarFooter>
     </Sidebar>
   );
 }

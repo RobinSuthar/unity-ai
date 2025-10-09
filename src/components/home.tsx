@@ -7,17 +7,17 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import InputBox from "./some";
-import { ModeToggle } from "@/components/theme/toggle-button";
-import { ScrollAreaDemo } from "@/components/blocks/scrol-area";
 import ScreenArea from "./screen-area";
 import { getServerSession } from "next-auth";
 import primsa from "@/prisma/prisma";
+import { SiteHeader } from "@/components/site-header";
 
 export default async function Page() {
   const data = await getServerSession();
 
   if (!data) {
+    const data = await getServerSession();
+
     const result = await primsa.user.create({
       data: {
         Name: data?.user?.name,
@@ -29,9 +29,25 @@ export default async function Page() {
   }
 
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <ScreenArea />
+    <SidebarProvider
+      style={
+        {
+          "--sidebar-width": "calc(var(--spacing) * 72)",
+          "--header-height": "calc(var(--spacing) * 12)",
+        } as React.CSSProperties
+      }
+    >
+      <AppSidebar variant="floating" />
+      <SidebarInset>
+        <SiteHeader />
+        <div className="flex flex-1 flex-col">
+          <div className="@container/main flex flex-1 flex-col gap-2">
+            <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+              <ScreenArea />
+            </div>
+          </div>
+        </div>
+      </SidebarInset>
     </SidebarProvider>
   );
 }

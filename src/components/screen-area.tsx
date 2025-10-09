@@ -63,17 +63,7 @@ export default function ScreenArea() {
     setTimeout(adjustHeight, 0);
   };
   return (
-    <SidebarProvider>
-      <header className="flex h-16 shrink-0 items-center gap-2  px-4">
-        <SidebarTrigger className="-ml-1" />
-        <Separator
-          orientation="vertical"
-          className="mr-2 data-[orientation=vertical]:h-4"
-        />
-
-        <ModeToggle />
-        <div className="ml-2 text-2xl">{modelSelection}</div>
-      </header>
+    <div>
       <div className="mb-24">
         <ScrollArea className="h-72  max-w-screen rounded-md ">
           <div className="p-28">
@@ -164,6 +154,6 @@ export default function ScreenArea() {
           </div>
         </div>
       </div>
-    </SidebarProvider>
+    </div>
   );
 }

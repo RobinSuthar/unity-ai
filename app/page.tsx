@@ -1,13 +1,11 @@
 "use client";
 import { BackgroundRippleEffectDemo } from "@/components/blocks/background-ripple";
-import { HeroScrollDemo } from "@/components/blocks/hero-scroll";
+
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
-import { TabsDemo } from "@/components/blocks/tabs-section";
 import { GlowingEffectDemoSecond } from "@/components/blocks/glowing-effect";
 import { AnimatedBeamDemo } from "@/components/blocks/animated-beam";
 import FAQS from "@/components/ui/faqs";
 import { TerminalDemo } from "@/components/blocks/terminal";
-import { HyperText } from "@/src/components/magicui/hyper-text";
 import { PriceGlow } from "@/components/blocks/price-glow";
 import WrapBg from "@/components/ui/wrap-bg";
 import { ScrollBasedVelocityImagesDemo } from "@/components/blocks/scroll";
@@ -19,7 +17,6 @@ export default function Home() {
       <h2 className="relative z-10 mx-auto max-w-5xl text-center  text-2xl font-bold text-neutral-800 md:text-4xl lg:text-7xl dark:text-neutral-100">
         Unlock Peak Performance !
       </h2>
-
       <p className="relative text-center  z-10 mx-auto mt-4 max-w-xl  text-neutral-800 dark:text-neutral-500">
         Each tool is crafted to maximize your AI-driven workflow.
       </p>

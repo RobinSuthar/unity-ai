@@ -8,7 +8,7 @@ import { PanelLeftIcon } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input2";
+import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
@@ -111,7 +111,7 @@ function SidebarProvider({
 
   // We add a state so that we can do data-state="expanded" or "collapsed".
   // This makes it easier to style the sidebar with Tailwind classes.
-  const state = open ? "expanded" : "collapsed";
+  const state = open ? "collapsed" : "expanded";
 
   const contextValue = React.useMemo<SidebarContextProps>(
     () => ({
