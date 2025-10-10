@@ -64,28 +64,32 @@ export default function ScreenArea() {
   };
   return (
     <div>
-      <div className="mb-24">
-        <ScrollArea className="h-72  max-w-screen rounded-md ">
-          <div className="p-28">
+      <div className="grid grid-cols-7">
+        <ScrollArea className="h-72 col-span-4 col-start-3 max-w-screen rounded-md ">
+          <div className="">
             {coverstation.map((x, i) => {
               if (i === 0 || i % 2 === 0) {
                 return (
                   <div
-                    className="text-right p-2    mb-10 font-light text-3xl"
+                    className="text-right  mb-10 font-light text-3xl"
                     key={i}
                   >
                     {x}
                   </div>
                 );
               } else {
-                return <div key={i}>{x}</div>;
+                return (
+                  <div className="col-span-4 col-start-2" key={i}>
+                    {x}
+                  </div>
+                );
               }
             })}
           </div>
         </ScrollArea>
       </div>
-      <div className="flex  ml-72 justify-center fixed align-middle content-center bottom-0">
-        <div className="min-w-[60px]    max-w-[685px] px-2.5 pt-2.5 backdrop-blur-xl border-[0.1px] border-b-0 bg-[#]/15 border-[#] rounded-t-3xl  flex justify-center items-center">
+      <div className="flex flex-row justify-center align-middle   content-center ">
+        <div className="min-w-[60px] fixed right-[25%] bottom-0   max-w-[685px] px-2.5 pt-2.5 backdrop-blur-xl border-[0.1px] border-b-0 bg-[#]/15 border-[#] rounded-t-3xl  flex justify-center items-center">
           <div className="backdrop-blur-lg flex flex-col justify-between border-b-0 border border-[#37323e4b] bg-[#]/20 pt-4 pb-2 px-4 w-[675px] max-h-full min-h-28 rounded-t-2xl">
             <textarea
               ref={textareaRef}
